@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neha Petkar | Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F8;--surface:#FFFFFF;--ink:#16213A;--muted:#4F5D78;--line:#D3DDE8;--accent:#0B7A75;--on-accent:#FFFFFF;--code-bg:#16213A;--code-ink:#DCE6F2;--code-key:#7FD6CF;--code-str:#F2C879;--code-dim:#8A98B3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1626;--surface:#16213A;--ink:#E6EDF7;--muted:#9AA9C4;--line:#27344F;--accent:#4FD1C5;--on-accent:#0E1626;--code-bg:#0A111E}}
+:root[data-theme="dark"]{--bg:#0E1626;--surface:#16213A;--ink:#E6EDF7;--muted:#9AA9C4;--line:#27344F;--accent:#4FD1C5;--on-accent:#0E1626;--code-bg:#0A111E}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0}
+header.top .name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.1rem;text-decoration:none;color:var(--ink)}
+nav a{margin-left:1.1rem;color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:2.5rem 0 3.5rem}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.6rem);font-weight:700;letter-spacing:-.02em}
+.hero p.lead{color:var(--muted);max-width:34rem;margin:1.25rem 0 1.75rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:.5rem;font-weight:500;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+.card-code{background:var(--code-bg);color:var(--code-ink);border-radius:.75rem;padding:1.1rem 1.25rem;font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;line-height:1.7;overflow-x:auto;margin:0}
+.card-code .req{color:var(--code-dim)}
+.card-code .ok{color:var(--code-key)}
+.card-code .k{color:var(--code-key)}
+.card-code .s{color:var(--code-str)}
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+section>h2{font-size:1.9rem;margin-bottom:1.5rem}
+.featured{background:var(--surface);border-left:5px solid var(--accent);border-radius:.25rem .75rem .75rem .25rem;padding:1.5rem 1.5rem 1.25rem}
+.featured h3{font-size:1.5rem}
+.stack{color:var(--muted);font-size:.95rem;margin:.35rem 0 1rem}
+.featured ul,.plain ul{margin:.5rem 0 0;padding-left:1.15rem}
+.featured li{margin-bottom:.45rem}
+.rows{margin-top:1.75rem}
+.row{display:grid;grid-template-columns:14rem 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row h3{font-size:1.15rem}
+.row .stack{margin:.25rem 0 0}
+.row p{margin:0}
+.pub{padding:.9rem 0;border-top:1px solid var(--line)}
+.pub:first-of-type{border-top:0}
+.pub strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem;font-weight:500}
+.pub span{color:var(--muted);font-size:.95rem}
+dl.skills{display:grid;grid-template-columns:11rem 1fr;gap:.6rem 1.25rem;margin:0}
+dl.skills dt{font-weight:500}
+dl.skills dd{margin:0;color:var(--muted)}
+.timeline{list-style:none;margin:0;padding:0 0 0 1.25rem;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 1.4rem 1rem}
+.timeline li::before{content:"";position:absolute;left:-1.78rem;top:.55rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--accent)}
+.timeline b{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:1.1rem}
+.timeline span{display:block;color:var(--muted);font-size:.95rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.two h3{font-size:1.2rem;margin-bottom:.75rem}
+.plain ul{padding-left:1.1rem}
+.plain li{margin-bottom:.5rem}
+footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line)}
+footer h2{font-size:1.9rem;margin-bottom:.75rem}
+footer p{color:var(--muted);max-width:34rem;margin:0 0 1.25rem}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:1.75rem;padding-top:1.5rem}
+  .row{grid-template-columns:1fr;gap:.35rem}
+  dl.skills{grid-template-columns:1fr;gap:.1rem}
+  dl.skills dd{margin-bottom:.7rem}
+  .two{grid-template-columns:1fr;gap:1.5rem}
+  nav a{margin-left:.8rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="name" href="#top">Neha Petkar</a>
+  <nav aria-label="Sections"><a href="#projects">Projects</a><a href="#research">Research</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Full-stack developer building AI-powered web apps</h1>
+    <p class="lead">I'm a final-year Computer Technology student in Pune. I build React and Node.js applications, connect them to AI models such as Google Gemini, and secure them properly. I'm looking for internships where I can ship real features.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:neha.petkar246@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/Nehapetkar05">View GitHub</a>
+    </div>
+  </div>
+  <pre class="card-code" aria-label="Profile summary shown as an API response"><span class="req">GET /api/neha</span>
+<span class="ok">200 OK</span>
+{
+  <span class="k">"name"</span>: <span class="s">"Neha Hemant Petkar"</span>,
+  <span class="k">"role"</span>: <span class="s">"Full-stack + AI integration"</span>,
+  <span class="k">"studying"</span>: <span class="s">"B.Tech Computer Technology, 2027"</span>,
+  <span class="k">"stack"</span>: [<span class="s">"React"</span>, <span class="s">"Node.js"</span>, <span class="s">"Express"</span>,
+            <span class="s">"MySQL"</span>, <span class="s">"Gemini API"</span>],
+  <span class="k">"published"</span>: <span class="s">"IEEE CCGE-2026"</span>,
+  <span class="k">"location"</span>: <span class="s">"Pune, India"</span>,
+  <span class="k">"open_to"</span>: <span class="s">"Internships"</span>
+}</pre>
+</div>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <article class="featured">
+    <h3>Aarogya AI: public health platform</h3>
+    <p class="stack">React (Vite), Tailwind CSS, Node.js, Express, MySQL, Sequelize, Google Gemini</p>
+    <p>A full-stack health app where people can describe symptoms, check disease risk, and keep track of vaccinations, with an AI assistant that answers in several languages.</p>
+    <ul>
+      <li>Google Gemini powers a multilingual health chatbot (English, Hindi, Marathi) with a built-in fallback, alongside a rule-based symptom checker that gives condition insights and care recommendations.</li>
+      <li>Five modular REST route groups cover authentication, health data, risk prediction, vaccination and user profiles.</li>
+      <li>Security built in: JWT-protected routes, bcrypt password hashing, input validation on login and registration, Helmet headers and CORS.</li>
+      <li>A rule-based risk module scores diabetes and hypertension risk from age, BMI, family history and lifestyle, then suggests prevention and screening steps.</li>
+      <li>A responsive interface with Chart.js dashboards, PDF report export, a vaccination scheduler, a first-aid guide and an emergency-contact directory.</li>
+    </ul>
+  </article>
+
+  <div class="rows">
+    <div class="row">
+      <div><h3>RFID attendance system</h3><p class="stack">Arduino, MySQL, WhatsApp API</p></div>
+      <p>Students tap an RFID card, attendance is saved to a MySQL database, and a WhatsApp message confirms it automatically.</p>
+    </div>
+    <div class="row">
+      <div><h3>Expense tracker dashboard</h3><p class="stack">HTML, CSS, JavaScript</p></div>
+      <p>An interactive dashboard that charts spending and exports reports as PDF.</p>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <h2>Research and publications</h2>
+  <div class="pub"><strong>Privacy-Preserving Intelligent Healthcare IoT Using On-Device Federated Learning for Real-Time Patient Monitoring</strong><span>Published and presented at the 2nd IEEE International Conference on Computing, Communication and Green Engineering (CCGE-2026), Pune, 7 to 8 May 2026.</span></div>
+  <div class="pub"><strong>Copyright: The Future of Digital Forensics</strong><span>Integrated AI with ethical and legal accountability.</span></div>
+  <div class="pub"><strong>Published design patent: Intelligent IoT Device with On-Device Federated Learning</strong><span>A device design that trains models on the device itself so patient data stays private.</span></div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>JavaScript, Python, Java, C++, C</dd>
+    <dt>Frontend</dt><dd>React.js, HTML5, CSS3, Tailwind CSS, responsive design</dd>
+    <dt>Backend and data</dt><dd>Node.js, Express.js, REST API design, MySQL, MongoDB, SQLite, Sequelize</dd>
+    <dt>AI and automation</dt><dd>Google Gemini API, OpenAI API, prompt engineering, generative AI integration</dd>
+    <dt>Security</dt><dd>JWT authentication, bcrypt, input validation, Helmet, CORS</dd>
+    <dt>Tools</dt><dd>Git, GitHub, Docker, Postman, VS Code, Vite, Streamlit</dd>
+  </dl>
+</section>
+
+<section id="background">
+  <h2>Experience and education</h2>
+  <ol class="timeline">
+    <li><b>B.Tech, Computer Technology</b><span>All India Shri Shivaji Memorial Institute of Information Technology, 2024 to 2027, CGPA 8.81 up to third year, now in final year</span></li>
+    <li><b>Software Intern, YSAAS Infotech</b><span>Jun to Jul 2023. Built React.js and Node.js modules and improved front-end performance by 25%.</span></li>
+    <li><b>Diploma, Computer Technology</b><span>Sou. Venutai Chavan Polytechnic, 2021 to 2024, 92.8%</span></li>
+  </ol>
+</section>
+
+<section id="more">
+  <div class="two">
+    <div class="plain">
+      <h3>Hackathons and awards</h3>
+      <ul>
+        <li>2nd place, Sinrem Tech Hackathon 2025</li>
+        <li>Winner, Pimpri Chinchwad Polytechnic Intercollegiate Project Competition 2024</li>
+        <li>Indradhanu International Grand Challenge 2025 to 26</li>
+        <li>Smart India Hackathon 2025</li>
+        <li>InnovateYou Techathon 3.0, 2026</li>
+      </ul>
+    </div>
+    <div class="plain">
+      <h3>Certifications</h3>
+      <ul>
+        <li>Python Programming, MKCL</li>
+        <li>Full Stack Web Development with AI Tools, Edunet Foundation and AICTE</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <h2>Let's talk</h2>
+  <p>I'm open to internships in web development and AI workflow automation. The quickest way to reach me is email.</p>
+  <div class="btns">
+    <a class="btn primary" href="mailto:neha.petkar246@gmail.com">neha.petkar246@gmail.com</a>
+    <a class="btn ghost" href="https://github.com/Nehapetkar05">github.com/Nehapetkar05</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
